@@ -3,18 +3,15 @@
 import 'bootstrap'; // import bootstrap elements and js
 import '../styles/main.scss';
 
+// Importing components
+import jokeCard from '../components/jokeCard';
+
 // Importing utils
-import renderToDOM from '../utils/renderToDOM';
+// import renderToDOM from '../utils/renderToDOM';
 
 const init = () => {
-  document.querySelector('#app').innerHTML = `
-  <div class="card" style="width: 18rem;">
-    <h1>Joke Generator</h1>
-    <small>Open your dev tools</small><br />
-    <button class="btn btn-danger" id="click-me">Get a Joke</button><br />
-    <hr />
-  </div>
-  `;
+  // Renders joke card to DOM
+  jokeCard();
   console.warn('YOU ARE UP AND RUNNING!');
 
   document
