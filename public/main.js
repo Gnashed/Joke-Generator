@@ -5,6 +5,8 @@ import '../styles/main.scss';
 
 // Importing components
 import jokeCard from '../components/jokeCard';
+
+// Importing events
 import domEvents from '../events/domEvents';
 
 // Importing utils
@@ -15,9 +17,6 @@ const init = () => {
   jokeCard();
   console.warn('YOU ARE UP AND RUNNING!');
   domEvents();
-  // document
-  //   .querySelector('#click-me')
-  //   .addEventListener('click', () => console.warn('You clicked that button!'));
 
   // USE WITH FIREBASE AUTH
   // ViewDirectorBasedOnUserAuthStatus();

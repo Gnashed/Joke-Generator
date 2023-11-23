@@ -1,11 +1,17 @@
 import jokeSetup from '../components/jokeSetup';
+import getPunchline from '../components/getPunchline';
 
 const domEvents = () => {
   document
-    .querySelector('#click-me')
+    .querySelector('#get-a-joke')
     .addEventListener('click', () => {
-      // console.warn('You clicked that button!');
       jokeSetup();
+    });
+
+  document
+    .querySelector('#joke-setup')// Browser reading as null for some reason. Not sure why.
+    .addEventListener('click', () => {
+      getPunchline();
     });
 };
 
