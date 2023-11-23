@@ -12,9 +12,16 @@ const getRequest = () => new Promise((resolve, reject) => {
     },
   })
   // wait and then do something.
-    .then((response) => response.json())
-    .then((data) => resolve(data))
-    .catch(reject);
+    .then((response) => {
+      console.warn('response', response);
+      response.json(); // We can't use the .json data w/o unpacking it.
+    })
+    .then((data) => {
+      resolve(data); // Taking the data so it cn be usable JS.
+      console.warn('resolved data', data);
+    })
+    .catch(reject); // If we get an error, it'll catch() it and reject it, preventing
+  // your website from breaking, unless your website depended on the data.
 });
 
 export default getRequest;
