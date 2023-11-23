@@ -4,12 +4,14 @@ const jokeEndpoint = 'https://v2.jokeapi.dev/joke/Programming?safe-mode&type=two
 
 // GET Joke
 const getRequest = () => new Promise((resolve, reject) => {
+  // We're requesting the joke API here. fetch() is sending off an HTTP request
   fetch(jokeEndpoint, {
     method: 'GET',
-    headers: {
+    headers: { // additional info on the type of request we're making
       'Content-Type': 'application/json',
     },
   })
+  // wait and then do something.
     .then((response) => response.json())
     .then((data) => resolve(data))
     .catch(reject);
