@@ -17,7 +17,7 @@ const getRequest = () => new Promise((resolve, reject) => {
       response.json(); // We can't use the .json data w/o unpacking it.
     })
     .then((data) => {
-      resolve(data.setup); // Taking the data so it cn be usable JS.
+      resolve(data); // Taking the data so it can be usable JS.
       // console.warn('resolved data', data);
     })
     .catch(reject); // If we get an error, it'll catch() it and reject it, preventing

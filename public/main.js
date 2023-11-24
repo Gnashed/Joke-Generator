@@ -3,23 +3,29 @@
 import 'bootstrap'; // import bootstrap elements and js
 import '../styles/main.scss';
 
-// Importing components
-import jokeCard from '../components/jokeCard';
-
-// Importing events
-import domEvents from '../events/domEvents';
-
-// Import API
-// import getRequest from '../api/promises';
-
-// Importing utils
-// import renderToDOM from '../utils/renderToDOM';
+import getRequest from '../api/promises';
+import renderToDOM from '../utils/renderToDOM';
 
 const init = () => {
-  // Renders joke card to DOM
-  jokeCard();
+  // Render Card
+  document.querySelector('#app').innerHTML = `
+  <div class="card" style="width: 18rem;">
+    <h1>Joke Generator</h1>
+    <div id="joke-setup"></div>
+    <div id="punchline"></div>
+    <button class="btn btn-danger" id="get-a-joke">Get a Joke</button><br />
+  </div>
+  `;
+
   // When buttons are clicked
-  domEvents();
+  document
+    .querySelector('#get-a-joke')
+    .addEventListener('click', () => {
+      getRequest().then((joke) => {
+        renderToDOM('#joke-setup', joke.setup);
+        renderToDOM('#punchline', joke.delivery);
+      });
+    });
 
   // USE WITH FIREBASE AUTH
   // ViewDirectorBasedOnUserAuthStatus();
