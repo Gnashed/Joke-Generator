@@ -1,11 +1,12 @@
 import jokeSetup from '../components/jokeSetup';
 import getPunchline from '../components/getPunchline';
+import getRequest from '../api/promises';
 
 const domEvents = () => {
   document
     .querySelector('#get-a-joke')
     .addEventListener('click', () => {
-      jokeSetup();
+      getRequest().then(jokeSetup());
     });
 
   document

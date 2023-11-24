@@ -9,13 +9,16 @@ import jokeCard from '../components/jokeCard';
 // Importing events
 import domEvents from '../events/domEvents';
 
+// Import API
+// import getRequest from '../api/promises';
+
 // Importing utils
 // import renderToDOM from '../utils/renderToDOM';
 
 const init = () => {
   // Renders joke card to DOM
   jokeCard();
-  console.warn('YOU ARE UP AND RUNNING!');
+  // When buttons are clicked
   domEvents();
 
   // USE WITH FIREBASE AUTH

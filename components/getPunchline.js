@@ -6,7 +6,7 @@ const getPunchline = () => {
       <h1>Joke Generator</h1>
       <small>Placeholder for Joke Setup</small><br />
       <small>Joke Delivery Placeholder</small><br />
-      <button class="btn btn-danger" id="joke-setup">Get Punchline</button><br />
+      <button class="btn btn-danger" id="punchLine">Get Punchline</button><br />
   </div>
   `;
 
