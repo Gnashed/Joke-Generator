@@ -9,17 +9,11 @@ const getRequest = () => new Promise((resolve, reject) => {
     method: 'GET',
     headers: { // additional info on the type of request we're making
       'Content-Type': 'application/json',
-    },
+    }
   })
   // wait and then do something.
-    .then((response) => {
-      // console.warn('response', response);
-      response.json(); // We can't use the .json data w/o unpacking it.
-    })
-    .then((data) => {
-      resolve(data); // Taking the data so it can be usable JS.
-      // console.warn('resolved data', data);
-    })
+    .then((response) => response.json()) // We can't use the .json data w/o unpacking it.
+    .then((data) => resolve(data)) // Returns the data is JS form.
     .catch(reject); // If we get an error, it'll catch() it and reject it, preventing
   // your website from breaking, unless your website depended on the data.
 });

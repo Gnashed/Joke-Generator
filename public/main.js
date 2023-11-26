@@ -9,7 +9,7 @@ import renderToDOM from '../utils/renderToDOM';
 const init = () => {
   // Render Card
   document.querySelector('#app').innerHTML = `
-  <div class="card" style="width: 18rem;">
+  <div class="card">
     <h1>Joke Generator</h1>
     <div id="joke-setup"></div>
     <div id="punchline"></div>
@@ -21,9 +21,10 @@ const init = () => {
   document
     .querySelector('#get-a-joke')
     .addEventListener('click', () => {
-      getRequest().then((joke) => {
-        renderToDOM('#joke-setup', joke.setup);
-        renderToDOM('#punchline', joke.delivery);
+      // Give the data a name, joke, then grab what you need from the data, which are setup and delivery.
+      getRequest().then((jokeData) => {
+        renderToDOM('#joke-setup', jokeData.setup);
+        renderToDOM('#punchline', jokeData.delivery);
       });
     });
 
